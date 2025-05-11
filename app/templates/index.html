@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lux/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="form-box">
+                <h2>SUBMIT DATA</h2>
+                <form action="/" method="post">
+                    <input type="text" name="sentence" placeholder="Enter your sentence" required>
+                    <input type="text" name="word" placeholder="Enter your word" required>
+                    <input type="text" name="label" placeholder="Enter your label" required>
+                    <button type="submit" class="btn btn-success w-100">SUBMIT</button>
+                </form>
+            </div>
+
+            <div class="form-box">
+                <h2>UPLOAD JSON</h2>
+                <form action="/upload-json" method="post" enctype="multipart/form-data">
+                    <input type="file" name="json_data" accept=".json" class="form-control json-input" required>
+                    <button type="submit" class="btn btn-success w-100">UPLOAD JSON</button>
+                </form>
+                
+                {%if json_data %}
+                    <h2 class="json_upload_successful">Json was uploaded successfully</h2>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="button-container">
+            <a href="/train" class="btn btn-primary">GO TO TRAINING PAGE</a>
+            <a href="/test" class="btn btn-primary">GO TO INFERENCE PAGE</a>
+            <a href="/" id="clear-database" class="btn btn-primary">CLEAR DATABASE</a>
+        </div>
+    </div>
+    <script src="/static/js/clearDatabase.js"></script>
+</body>
+</html>

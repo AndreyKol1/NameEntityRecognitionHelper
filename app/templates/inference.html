@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Model</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/lux/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/inference.css') }}">
+</head>
+<body>
+    <div class="centered-container">
+        <h1>Test Your Model</h1>
+        <form id="test-form">
+            <input type="text" id="sentence" placeholder="Enter your sentence" required><br>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+
+        <div id="result-container" class="alert alert-info mt-4" style="display: none;">
+            <h4>Prediction Result:</h4>
+            <ul id="result-list"></ul>
+        </div>
+        
+        <div id="error-container" class="alert alert-danger mt-4" style="display: none;">
+            <h4>Error:</h4>
+            <pre id="error-message"></pre>
+        </div>
+
+        <script src="/static/js/listPredictions.js"></script>
+</body>
+</html>
