@@ -27,11 +27,11 @@ The project provides two ways of adding data: manually or load a json file with 
 
 ```
 [
-{
-    "sentence": "The dog is sitting on the ground",
-    "word": "dog",
-    "label": "ANIMAL"
-}
+    {
+        "sentence": "The dog is sitting on the ground",
+        "word": "dog",
+        "label": "ANIMAL"
+    }
 ]
 ```
 
